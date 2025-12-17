@@ -50,26 +50,26 @@
         }
 
         header {
-            height: 50vh;
+            height: 40vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             background: linear-gradient(rgba(15, 25, 35, 0.8), rgba(8, 12, 16, 1)), 
-                        url('https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6230f6120ef77793/64100c6d98656610738d8a7c/VAL_JETT_EYECATCHER.jpg');
+                        url('https://images.alphacoders.com/132/1323385.jpeg');
             background-size: cover;
             background-position: center;
             border-bottom: 4px solid var(--val-red);
         }
 
-        h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; letter-spacing: 4px; font-weight: 900; }
-        .hero-sub { color: var(--val-red); font-size: 1.2rem; letter-spacing: 2px; }
+        h1 { font-size: clamp(2rem, 8vw, 4rem); margin: 0; letter-spacing: 4px; font-weight: 900; }
+        .hero-sub { color: var(--val-red); font-size: 1rem; letter-spacing: 2px; }
 
         .btn-val {
             background-color: var(--val-red);
             color: white;
-            padding: 15px 35px;
+            padding: 12px 30px;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
@@ -77,45 +77,36 @@
             transition: 0.3s;
             border: none;
             cursor: pointer;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
-        .btn-val:hover { background-color: var(--val-white); color: var(--val-red); transform: translateY(-3px); }
+        .btn-val:hover { background-color: var(--val-white); color: var(--val-red); transform: translateY(-2px); }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+        .tab-content { display: none; animation: fadeIn 0.4s; }
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        h2 { border-left: 5px solid var(--val-red); padding-left: 15px; font-size: 1.8rem; margin: 40px 0 30px 0; }
+        h2 { border-left: 4px solid var(--val-red); padding-left: 12px; font-size: 1.5rem; margin: 30px 0 20px 0; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: var(--val-dark); padding: 20px; border: 1px solid #1f2933; transition: 0.3s; }
-        .card:hover { border-color: var(--val-red); }
-        .card h3 { color: var(--val-red); margin: 15px 0 10px 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .card { background: var(--val-dark); border: 1px solid #1f2933; overflow: hidden; transition: 0.3s; }
+        .card:hover { border-color: var(--val-red); transform: translateY(-3px); }
 
-        /* IMAGE FIX */
-        .card .map-img { 
-            width: 100%; 
-            height: 180px; 
-            background-color: #1a252e; /* Fallback Farbe */
+        .map-img-box {
+            width: 100%;
+            height: 180px;
             background-size: cover;
             background-position: center;
-            border-bottom: 2px solid var(--val-red); 
+            border-bottom: 2px solid var(--val-red);
         }
 
-        .card ul { text-transform: none; font-size: 0.85rem; color: var(--val-gray); padding-left: 20px; }
-        .card ul li { margin-bottom: 5px; }
+        .card-body { padding: 20px; }
+        .card h3 { color: var(--val-red); margin: 0 0 10px 0; font-size: 1.3rem; }
+        .card ul { text-transform: none; font-size: 0.85rem; color: var(--val-gray); padding-left: 18px; margin: 0; }
+        .card ul li { margin-bottom: 6px; }
 
-        .event-card {
-            background: rgba(255, 70, 85, 0.05);
-            border: 1px solid rgba(255, 70, 85, 0.3);
-            padding: 40px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: var(--val-gray); border-top: 1px solid #1f2933; margin-top: 50px; }
+        footer { text-align: center; padding: 30px; font-size: 0.7rem; color: var(--val-gray); border-top: 1px solid #1f2933; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -129,101 +120,121 @@
     <header>
         <p class="hero-sub">Valo Nexus Community</p>
         <h1>NVEX</h1>
-        <a href="https://discord.gg/sDyb6mKrwY" class="btn-val">DEM DISCORD BEITRETEN</a>
+        <a href="https://discord.gg/sDyb6mKrwY" class="btn-val">JETZT BEITRETEN</a>
     </header>
 
     <div class="container">
         
         <div id="home" class="tab-content active">
-            <h2>Community Events</h2>
-            <div class="event-card">
-                <div style="font-size: 2.5rem; color: var(--val-red); font-weight: 900;">5-STACK-FRIDAY</div>
-                <p>Jeden Freitag ab 20:00 Uhr</p>
-                <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val" style="background: var(--val-white); color: var(--val-black);">JETZT ANMELDEN</a>
-            </div>
-            <div class="grid">
-                <div class="card" style="text-align: center;"><h3>SCRIMS</h3><p style="text-transform: none;">Interne 5v5 Trainings.</p></div>
-                <div class="card" style="text-align: center;"><h3>MATES</h3><p style="text-transform: none;">Finde Mitspieler für jeden Rank.</p></div>
+            <h2>Aktuelle Events</h2>
+            <div style="background: rgba(255, 70, 85, 0.05); border: 1px solid var(--val-red); padding: 30px; text-align: center;">
+                <h2 style="border:none; margin:0; color:var(--val-red); font-size: 2rem;">5-STACK-FRIDAY</h2>
+                <p>Jeden Freitag ab 20:00 Uhr – Rank Up im Team!</p>
+                <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val">ANMELDEN</a>
             </div>
         </div>
 
         <div id="news" class="tab-content">
-            <h2>Live Feed & Updates</h2>
+            <h2>Updates</h2>
             <div class="grid">
-                <div class="card" style="text-align: center;">
+                <div class="card card-body" style="text-align: center;">
                     <h3># Discord News</h3>
-                    <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val">KANAL ÖFFNEN</a>
+                    <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val">ÖFFNEN</a>
                 </div>
-                <div class="card" style="text-align: center;">
+                <div class="card card-body" style="text-align: center;">
                     <h3>Patch Notes</h3>
-                    <a href="https://playvalorant.com/de-de/news/" target="_blank" class="btn-val" style="background: var(--val-gray);">DETAILS LESEN</a>
+                    <a href="https://playvalorant.com/de-de/news/" target="_blank" class="btn-val" style="background: var(--val-gray);">LESEN</a>
                 </div>
             </div>
         </div>
 
         <div id="agents" class="tab-content">
-            <h2>Agents & Rollen</h2>
-            <div class="grid" style="margin-bottom: 60px;">
-                <div class="card" style="text-align: center;">
-                    <h3 style="color: #ff4655;">Duellanten</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Angreifer wie Jett & Reyna.</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <h3 style="color: #ff4655;">Taktiker</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Smoker wie Omen & Brim.</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <h3 style="color: #ff4655;">Initiatoren</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Aufklärer wie Sova & Skye.</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <h3 style="color: #ff4655;">Wächter</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Defender wie Killjoy & Sage.</p>
-                </div>
+            <h2>Agents</h2>
+            <div class="grid" style="margin-bottom: 40px;">
+                <div class="card card-body"><h3>Duellanten</h3><p style="text-transform:none; font-size:0.8rem;">Entry & Space-Creator.</p></div>
+                <div class="card card-body"><h3>Taktiker</h3><p style="text-transform:none; font-size:0.8rem;">Smokes & Vision-Control.</p></div>
+                <div class="card card-body"><h3>Initiatoren</h3><p style="text-transform:none; font-size:0.8rem;">Info & Flash-Support.</p></div>
+                <div class="card card-body"><h3>Wächter</h3><p style="text-transform:none; font-size:0.8rem;">Defense & Flank-Watch.</p></div>
             </div>
 
-            <h2>Map-Pool & Strategien</h2>
+            <h2>Map Guide 2025</h2>
             <div class="grid">
                 <div class="card">
-                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/7649514605963234d3d4960d70b0948943398f64-3840x2160.jpg');"></div>
-                    <h3>Abyss</h3>
-                    <ul><li>Achtung Sturzgefahr!</li><li>Gute Smokes auf A sind Pflicht.</li></ul>
+                    <div class="map-img-box" style="background-image: url('https://images.alphacoders.com/136/1366961.jpeg');"></div>
+                    <div class="card-body">
+                        <h3>Abyss</h3>
+                        <ul>
+                            <li><strong>Meta:</strong> Astra oder Omen sind Pflicht für "Deep-Smokes".</li>
+                            <li><strong>Def:</strong> Halte A-Site mit Jett/Chamber für Picks an der Kante.</li>
+                            <li><strong>Pro-Tip:</strong> Movement-Skills (Jett/Raze) nutzen, um über die Lücken zu flanken.</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="card">
-                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/94639942a77f97970d47345686036113b2e7753c-3840x2160.jpg');"></div>
-                    <h3>Sunset</h3>
-                    <ul><li>Mid-Kontrolle ist alles.</li><li>Breach/Raze sind sehr stark.</li></ul>
+                    <div class="map-img-box" style="background-image: url('https://images.alphacoders.com/133/1330360.jpeg');"></div>
+                    <div class="card-body">
+                        <h3>Sunset</h3>
+                        <ul>
+                            <li><strong>Meta:</strong> Cypher ist auf B-Site fast unbesiegbar (Käfig-Setups).</li>
+                            <li><strong>Mid:</strong> Wer die Mitte kontrolliert, kontrolliert die Runden-Rotation.</li>
+                            <li><strong>Attack:</strong> A-Main Split mit Breach-Stun ist die stärkste Eröffnung.</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="card">
-                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/0333333333333333333333333333333333333333-3840x2160.jpg?auto=format&q=60'); background-color: #3d1c1c;"></div>
-                    <h3>Lotus</h3>
-                    <ul><li>Nutze die Drehtüren.</li><li>Attack über A-Rubbel starten.</li></ul>
+                    <div class="map-img-box" style="background-image: url('https://images.alphacoders.com/130/1303861.jpeg');"></div>
+                    <div class="card-body">
+                        <h3>Lotus</h3>
+                        <ul>
+                            <li><strong>Meta:</strong> Killjoy-Setup auf C-Site hält den gesamten Baum-Push auf.</li>
+                            <li><strong>Taktik:</strong> Schnelle Rushes über die Drehtüren erzwingen Over-Rotationen.</li>
+                            <li><strong>Defense:</strong> A-Rubbel aggressiv einnehmen für frühe Info.</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="card">
-                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/238f5963a763137b2d56d708f51df1c7d3d7f9d8-3840x2160.jpg');"></div>
-                    <h3>Bind</h3>
-                    <ul><li>Teleporter für Fakes nutzen.</li><li>Hookah Kontrolle wichtig.</li></ul>
+                    <div class="map-img-box" style="background-image: url('https://images.alphacoders.com/109/1094056.jpg');"></div>
+                    <div class="card-body">
+                        <h3>Bind</h3>
+                        <ul>
+                            <li><strong>Meta:</strong> Brimstone ist wegen der Tripel-Smokes auf A-Site gesetzt.</li>
+                            <li><strong>Combo:</strong> Gekko-Moshpit in Kombination mit Fade-Bind in Hookah.</li>
+                            <li><strong>Teleport:</strong> Nutze TP nur als Last-Second-Fake oder Flucht.</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="card">
-                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/07198a287955949d01e1d05324707197f1f00889-3840x2160.jpg');"></div>
-                    <h3>Ascent</h3>
-                    <ul><li>Türen schnell bedienen.</li><li>Sova-Recon nutzen.</li></ul>
+                    <div class="map-img-box" style="background-image: url('https://images.alphacoders.com/109/1094054.jpg');"></div>
+                    <div class="card-body">
+                        <h3>Ascent</h3>
+                        <ul>
+                            <li><strong>Meta:</strong> Sova-Recon ist der wichtigste Info-Skill (Mitte/B-Main).</li>
+                            <li><strong>Taktik:</strong> Türen auf A/B erst im Post-Plant schließen, um Retake zu erschweren.</li>
+                            <li><strong>Def:</strong> Killjoy/Cypher auf B, Jett/OP auf A-Main.</li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="card">
-                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/232014197e44e21d6e19f91f34954446b0a23368-3840x2160.jpg');"></div>
-                    <h3>Haven</h3>
-                    <ul><li>Garage gut schützen.</li><li>Drei Spots fordern Aufteilung.</li></ul>
-                </div>
-                <div class="card">
-                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/79e88383f9882269c2780e0600078027732d847c-3840x2160.jpg');"></div>
-                    <h3>Icebox</h3>
-                    <ul><li>Vertikales Aiming trainieren.</li><li>Sage-Wall auf B-Tube.</li></ul>
+                    <div class="map-img-box" style="background-image: url('https://images.alphacoders.com/134/1341051.jpeg');"></div>
+                    <div class="card-body">
+                        <h3>Haven</h3>
+                        <ul>
+                            <li><strong>Default:</strong> Attacke immer 1-3-1 spielen, um Info auf allen 3 Spots zu haben.</li>
+                            <li><strong>Garage:</strong> Der wichtigste Punkt der Map. Verlierst du Garage, verlierst du B und C.</li>
+                            <li><strong>Meta:</strong> Breach-Aftershock klärt die Ecken auf C-Long perfekt.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer>&copy; 2025 NVEX | NICHT MIT RIOT GAMES VERBUNDEN</footer>
+    <footer>&copy; 2025 NVEX | VALORANT COMMUNITY HUB</footer>
 
     <script>
         function openTab(evt, tabName) {
