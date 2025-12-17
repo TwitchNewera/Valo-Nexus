@@ -94,7 +94,16 @@
         .card:hover { border-color: var(--val-red); }
         .card h3 { color: var(--val-red); margin: 15px 0 10px 0; }
 
-        .card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--val-red); }
+        /* IMAGE FIX */
+        .card .map-img { 
+            width: 100%; 
+            height: 180px; 
+            background-color: #1a252e; /* Fallback Farbe */
+            background-size: cover;
+            background-position: center;
+            border-bottom: 2px solid var(--val-red); 
+        }
+
         .card ul { text-transform: none; font-size: 0.85rem; color: var(--val-gray); padding-left: 20px; }
         .card ul li { margin-bottom: 5px; }
 
@@ -132,7 +141,6 @@
                 <p>Jeden Freitag ab 20:00 Uhr</p>
                 <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val" style="background: var(--val-white); color: var(--val-black);">JETZT ANMELDEN</a>
             </div>
-
             <div class="grid">
                 <div class="card" style="text-align: center;"><h3>SCRIMS</h3><p style="text-transform: none;">Interne 5v5 Trainings.</p></div>
                 <div class="card" style="text-align: center;"><h3>MATES</h3><p style="text-transform: none;">Finde Mitspieler für jeden Rank.</p></div>
@@ -154,67 +162,65 @@
         </div>
 
         <div id="agents" class="tab-content">
-            
             <h2>Agents & Rollen</h2>
             <div class="grid" style="margin-bottom: 60px;">
                 <div class="card" style="text-align: center;">
                     <h3 style="color: #ff4655;">Duellanten</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Aggressive Angreifer (Jett, Phoenix, Reyna). Schaffen Platz für das Team.</p>
+                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Angreifer wie Jett & Reyna.</p>
                 </div>
                 <div class="card" style="text-align: center;">
                     <h3 style="color: #ff4655;">Taktiker</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Smoker (Omen, Brim, Viper). Kontrollieren das Sichtfeld.</p>
+                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Smoker wie Omen & Brim.</p>
                 </div>
                 <div class="card" style="text-align: center;">
                     <h3 style="color: #ff4655;">Initiatoren</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Aufklärer (Sova, Skye, Fade). Finden Gegner und nutzen Blinds.</p>
+                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Aufklärer wie Sova & Skye.</p>
                 </div>
                 <div class="card" style="text-align: center;">
                     <h3 style="color: #ff4655;">Wächter</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Verteidiger (Sage, Killjoy, Cypher). Halten Flanken und Spots.</p>
+                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Defender wie Killjoy & Sage.</p>
                 </div>
             </div>
 
             <h2>Map-Pool & Strategien</h2>
             <div class="grid">
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt193e4303b7405234/665ef07850e056499696f8c2/Abyss_KeyArt_Final.jpg">
+                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/7649514605963234d3d4960d70b0948943398f64-3840x2160.jpg');"></div>
                     <h3>Abyss</h3>
-                    <ul><li>Achtung Sturzgefahr!</li><li>Nutze Movement-Skills.</li><li>Gute Smokes auf A sind Pflicht.</li></ul>
+                    <ul><li>Achtung Sturzgefahr!</li><li>Gute Smokes auf A sind Pflicht.</li></ul>
                 </div>
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt7f38076615967073/64e6669f14376c3453896564/Sunset_Loading_Screen.jpg">
+                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/94639942a77f97970d47345686036113b2e7753c-3840x2160.jpg');"></div>
                     <h3>Sunset</h3>
-                    <ul><li>Mid-Kontrolle ist alles.</li><li>Früher Druck auf A-Main.</li><li>Breach/Raze sind sehr stark.</li></ul>
+                    <ul><li>Mid-Kontrolle ist alles.</li><li>Breach/Raze sind sehr stark.</li></ul>
                 </div>
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6d57c703d15b1357/63e18f260195e26715f333f2/Lotus_Loading_Screen_1.jpg">
+                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/0333333333333333333333333333333333333333-3840x2160.jpg?auto=format&q=60'); background-color: #3d1c1c;"></div>
                     <h3>Lotus</h3>
-                    <ul><li>Nutze die Drehtüren.</li><li>Attack über A-Rubbel starten.</li><li>C-Side ideal für Lineups.</li></ul>
+                    <ul><li>Nutze die Drehtüren.</li><li>Attack über A-Rubbel starten.</li></ul>
                 </div>
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt19313437549615fc/5eec366d03d09b305417830b/bind-featured.png">
+                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/238f5963a763137b2d56d708f51df1c7d3d7f9d8-3840x2160.jpg');"></div>
                     <h3>Bind</h3>
-                    <ul><li>Teleporter für Fakes nutzen.</li><li>B-Hookah Fokus.</li><li>Brimstone/Viper Top-Picks.</li></ul>
+                    <ul><li>Teleporter für Fakes nutzen.</li><li>Hookah Kontrolle wichtig.</li></ul>
                 </div>
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt8705973e660ef087/5ee7933190ca3a304e2808c1/ascent-featured.png">
+                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/07198a287955949d01e1d05324707197f1f00889-3840x2160.jpg');"></div>
                     <h3>Ascent</h3>
-                    <ul><li>Türen schnell schließen/öffnen.</li><li>Sova-Recon ist extrem gut.</li><li>Mitte-Split für den Attack.</li></ul>
+                    <ul><li>Türen schnell bedienen.</li><li>Sova-Recon nutzen.</li></ul>
                 </div>
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt06848ef9bc01a070/5f44865184206c359986326c/haven-featured.png">
+                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/232014197e44e21d6e19f91f34954446b0a23368-3840x2160.jpg');"></div>
                     <h3>Haven</h3>
-                    <ul><li>Schutz der Garage ist wichtig.</li><li>Drei Spots fordern Aufteilung.</li><li>Default-Play zieht Def auseinander.</li></ul>
+                    <ul><li>Garage gut schützen.</li><li>Drei Spots fordern Aufteilung.</li></ul>
                 </div>
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6f7b4bc664364491/5fbeba6669865620958f0016/Icebox_Loading_Screen.jpg">
+                    <div class="map-img" style="background-image: url('https://cmsassets.rgpub.io/sanity/images/ds6ad7ih/playvalorant/79e88383f9882269c2780e0600078027732d847c-3840x2160.jpg');"></div>
                     <h3>Icebox</h3>
-                    <ul><li>Achte auf vertikale Gegner.</li><li>Sage-Wall auf B-Tube.</li><li>A-Belagerung braucht Flashes.</li></ul>
+                    <ul><li>Vertikales Aiming trainieren.</li><li>Sage-Wall auf B-Tube.</li></ul>
                 </div>
             </div>
         </div>
-
     </div>
 
     <footer>&copy; 2025 NVEX | NICHT MIT RIOT GAMES VERBUNDEN</footer>
@@ -228,7 +234,6 @@
             for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
-            window.scrollTo({ top: 300, behavior: 'smooth' });
         }
     </script>
 </body>
