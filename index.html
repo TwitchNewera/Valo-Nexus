@@ -3,110 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valorant Community | Join Us</title>
+    <title>Valo Nexus | 5-Stack-Friday</title>
     <style>
+        /* VALORANT FARBEN & FONTS */
         :root {
             --val-red: #ff4655;
             --val-dark: #0f1923;
+            --val-black: #080c10;
             --val-white: #ece8e1;
+            --val-gray: #8b978f;
         }
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--val-dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--val-black);
             color: var(--val-white);
             text-transform: uppercase;
+            line-height: 1.6;
         }
 
+        /* HEADER / HERO SEKTION */
         header {
-            height: 100vh;
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(rgba(15, 25, 35, 0.7), rgba(15, 25, 35, 0.7)), 
-                        url('https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6230f6120ef77793/64100c6d98656610738d8a7c/VAL_JETT_EYECATCHER.jpg'); /* Beispielbild */
+            background: linear-gradient(rgba(15, 25, 35, 0.8), rgba(8, 12, 16, 1)), 
+                        url('https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6230f6120ef77793/64100c6d98656610738d8a7c/VAL_JETT_EYECATCHER.jpg');
             background-size: cover;
             background-position: center;
+            border-bottom: 4px solid var(--val-red);
         }
 
         h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            letter-spacing: 5px;
+            font-size: clamp(2rem, 8vw, 5rem);
+            margin: 0;
+            letter-spacing: 4px;
+            font-weight: 900;
         }
 
-        p {
+        .hero-sub {
+            color: var(--val-red);
             font-size: 1.2rem;
+            letter-spacing: 2px;
             margin-bottom: 30px;
-            color: #8b978f;
         }
 
-        .btn-discord {
+        /* BUTTONS */
+        .btn-val {
             background-color: var(--val-red);
             color: white;
-            padding: 15px 40px;
+            padding: 18px 45px;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); /* Valorant-Style Ecken */
+            display: inline-block;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-val:hover {
+            background-color: var(--val-white);
+            color: var(--val-red);
+            transform: translateY(-3px);
+        }
+
+        /* CONTENT CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        h2 {
+            border-left: 5px solid var(--val-red);
+            padding-left: 15px;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        /* EVENT BOX */
+        .event-card {
+            background: rgba(255, 70, 85, 0.05);
+            border: 1px solid rgba(255, 70, 85, 0.3);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 60px;
+        }
+
+        .event-card::before {
+            content: "LIVE EVENT";
+            position: absolute;
+            top: 15px;
+            left: -30px;
+            background: var(--val-red);
+            padding: 5px 40px;
+            transform: rotate(-45deg);
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .event-title {
+            font-size: 3rem;
+            color: var(--val-red);
+            margin: 10px 0;
+        }
+
+        /* FEATURES GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--val-dark);
+            padding: 30px;
+            border: 1px solid #1f2933;
             transition: 0.3s;
         }
 
-        .btn-discord:hover {
-            background-color: white;
+        .card:hover {
+            border-color: var(--val-red);
+        }
+
+        .card h3 {
             color: var(--val-red);
-            transform: scale(1.05);
+            margin-top: 0;
         }
 
-        .container {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: auto;
+        footer {
             text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: var(--val-gray);
+            border-top: 1px solid #1f2933;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 50px;
-        }
-
-        .stat-card {
-            border: 1px solid #333;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .event-title { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Valo Nexus</h1>
-        <p>Bist du bereit für die nächste Runde? Tritt unserem Discord bei.</p>
-        <a href="https://discord.gg/sDyb6mKrwY" class="btn-discord">JETZT BEITRETEN</a>
+        <p class="hero-sub">Valo Nexus Community Page</p>
+        <h1>NVEX</h1>
+        <p style="margin-bottom: 40px;">Tactical Shooter. Real Community.</p>
+        <a href="https://discord.gg/sDyb6mKrwY" class="btn-val">DEM DISCORD BEITRETEN</a>
     </header>
 
     <div class="container">
-        <h2>Warum wir?</h2>
-        <div class="stats-grid">
-            <div class="stat-card">
-                <h3 style="color: var(--val-red);">SCRIMS</h3>
-                <p>Regelmäßige interne 5v5 Matches.</p>
+        
+        <h2>Community Events</h2>
+        <div class="event-card">
+            <p style="letter-spacing: 3px; margin-bottom: 0;">Jeden Freitag ab 20:00 Uhr</p>
+            <div class="event-title">5-STACK-FRIDAY</div>
+            <p style="text-transform: none; color: var(--val-gray); max-width: 600px; margin: 20px auto;">
+                Keine Lust mehr auf Randoms ohne Mikro? Jeden Freitag sammeln wir uns für Full-Stack Ranked oder interne Custom Games.
+            </p>
+            <br>
+            <a href="HIER_DEIN_DISCORD_EVENT_CHANNEL_LINK" class="btn-val" style="background-color: var(--val-white); color: var(--val-black);">JETZT ANMELDEN</a>
+        </div>
+
+        <h2>Was wir bieten</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>SCRIMS</h3>
+                <p style="text-transform: none;">Wir organisieren regelmäßig 5v5 Trainings-Matches gegen andere Teams oder intern.</p>
             </div>
-            <div class="stat-card">
-                <h3 style="color: var(--val-red);">RANKED</h3>
-                <p>Finde Mates für deinen Rank-Push.</p>
+            <div class="card">
+                <h3>MATES FINDEN</h3>
+                <p style="text-transform: none;">Von Eisen bis Radiant – bei uns findest du für jeden Rank die passenden Mitspieler.</p>
             </div>
-            <div class="stat-card">
-                <h3 style="color: var(--val-red);">EVENTS</h3>
-                <p>Turniere mit kleinen Preisen.</p>
+            <div class="card">
+                <h3>NEWS</h3>
+                <p style="text-transform: none;">Bleib up-to-date über Patches, Agent-Leaks und die aktuelle Meta.</p>
             </div>
         </div>
+
     </div>
+
+    <footer>
+        &copy; 2025 NVEX | NICHT MIT RIOT GAMES VERBUNDEN
+    </footer>
 
 </body>
 </html>
