@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valo Nexus | Homepage</title>
+    <title>Valo Nexus | NVEX Hub</title>
     <style>
-        /* VALORANT FARBEN & FONTS */
         :root {
             --val-red: #ff4655;
             --val-dark: #0f1923;
@@ -23,7 +22,7 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATION REITER */
+        /* NAVIGATION */
         nav {
             background: var(--val-dark);
             display: flex;
@@ -51,9 +50,9 @@
             background: rgba(255, 70, 85, 0.1);
         }
 
-        /* HEADER / HERO SEKTION */
+        /* HEADER */
         header {
-            height: 70vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -66,141 +65,63 @@
             border-bottom: 4px solid var(--val-red);
         }
 
-        h1 {
-            font-size: clamp(2rem, 8vw, 5rem);
-            margin: 0;
-            letter-spacing: 4px;
-            font-weight: 900;
-        }
-
-        .hero-sub {
-            color: var(--val-red);
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-        }
+        h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; letter-spacing: 4px; font-weight: 900; }
+        .hero-sub { color: var(--val-red); font-size: 1.2rem; letter-spacing: 2px; }
 
         /* BUTTONS */
         .btn-val {
             background-color: var(--val-red);
             color: white;
-            padding: 18px 45px;
+            padding: 15px 35px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.1rem;
             display: inline-block;
             clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-            transition: all 0.3s ease;
+            transition: 0.3s;
             border: none;
             cursor: pointer;
+            margin-top: 20px;
         }
 
-        .btn-val:hover {
-            background-color: var(--val-white);
-            color: var(--val-red);
-            transform: translateY(-3px);
-        }
+        .btn-val:hover { background-color: var(--val-white); color: var(--val-red); transform: translateY(-3px); }
 
-        /* CONTENT CONTAINER */
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* TABS LOGIK */
+        /* CONTENT */
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         .tab-content { display: none; animation: fadeIn 0.5s; }
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        h2 {
-            border-left: 5px solid var(--val-red);
-            padding-left: 15px;
-            font-size: 2rem;
-            margin-bottom: 40px;
-        }
+        h2 { border-left: 5px solid var(--val-red); padding-left: 15px; font-size: 1.8rem; margin-bottom: 30px; }
 
-        /* EVENT BOX */
+        /* GRID SYSTEM */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--val-dark); padding: 30px; border: 1px solid #1f2933; text-align: center; transition: 0.3s; }
+        .card:hover { border-color: var(--val-red); }
+        .card h3 { color: var(--val-red); margin-top: 0; }
+
+        /* EVENT CARD */
         .event-card {
             background: rgba(255, 70, 85, 0.05);
             border: 1px solid rgba(255, 70, 85, 0.3);
             padding: 40px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
-        .event-card::before {
-            content: "LIVE EVENT";
-            position: absolute;
-            top: 15px;
-            left: -30px;
-            background: var(--val-red);
-            padding: 5px 40px;
-            transform: rotate(-45deg);
-            font-size: 0.7rem;
-            font-weight: bold;
-        }
-
-        .event-title {
-            font-size: 3rem;
-            color: var(--val-red);
-            margin: 10px 0;
-        }
-
-        /* PATCH NOTES & GRID */
-        .patch-card {
-            background: var(--val-dark);
-            border-left: 5px solid var(--val-red);
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-        .patch-img { width: 100%; height: 250px; object-fit: cover; }
-        .patch-text { padding: 20px; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: var(--val-dark);
-            padding: 30px;
-            border: 1px solid #1f2933;
-            transition: 0.3s;
-            text-align: center;
-        }
-        .card:hover { border-color: var(--val-red); }
-        .card h3 { color: var(--val-red); margin-top: 0; }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.8rem;
-            color: var(--val-gray);
-            border-top: 1px solid #1f2933;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .event-title { font-size: 2rem; }
-        }
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: var(--val-gray); border-top: 1px solid #1f2933; margin-top: 50px; }
     </style>
 </head>
 <body>
 
     <nav>
         <button class="active" onclick="openTab(event, 'home')">Home</button>
-        <button onclick="openTab(event, 'patchnotes')">Patch Notes</button>
-        <button onclick="openTab(event, 'agents-maps')">Agents & Maps</button>
+        <button onclick="openTab(event, 'news')">Live News</button>
+        <button onclick="event, openTab(event, 'agents')">Agents & Maps</button>
     </nav>
 
     <header>
-        <p class="hero-sub">Valo Nexus Community Page</p>
+        <p class="hero-sub">Valo Nexus Community</p>
         <h1>NVEX</h1>
-        <p style="margin-bottom: 40px;">Tactical Shooter. Real Community.</p>
         <a href="https://discord.gg/sDyb6mKrwY" class="btn-val">DEM DISCORD BEITRETEN</a>
     </header>
 
@@ -209,84 +130,66 @@
         <div id="home" class="tab-content active">
             <h2>Community Events</h2>
             <div class="event-card">
-                <p style="letter-spacing: 3px; margin-bottom: 0;">Jeden Freitag ab 20:00 Uhr</p>
-                <div class="event-title">5-STACK-FRIDAY</div>
-                <p style="text-transform: none; color: var(--val-gray); max-width: 600px; margin: 20px auto;">
-                    Keine Lust mehr auf Randoms ohne Mikro? Jeden Freitag sammeln wir uns für Full-Stack Ranked oder interne Custom Games.
-                </p>
-                <br>
-                <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val" style="background-color: var(--val-white); color: var(--val-black);">JETZT ANMELDEN</a>
+                <div style="font-size: 2.5rem; color: var(--val-red); font-weight: 900;">5-STACK-FRIDAY</div>
+                <p>Jeden Freitag ab 20:00 Uhr</p>
+                <p style="text-transform: none; color: var(--val-gray);">Finde dein Team für den Rank-Push. Keine Randoms mehr!</p>
+                <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val" style="background: var(--val-white); color: var(--val-black);">JETZT ANMELDEN</a>
             </div>
 
-            <h2>Was wir bieten</h2>
             <div class="grid">
-                <div class="card">
-                    <h3>SCRIMS</h3>
-                    <p style="text-transform: none;">Wir organisieren regelmäßig 5v5 Trainings-Matches gegen andere Teams oder intern.</p>
-                </div>
-                <div class="card">
-                    <h3>MATES FINDEN</h3>
-                    <p style="text-transform: none;">Von Eisen bis Radiant – bei uns findest du für jeden Rank die passenden Mitspieler.</p>
-                </div>
-                <div class="card">
-                    <h3>NEWS</h3>
-                    <p style="text-transform: none;">Bleib up-to-date über Patches, Agent-Leaks und die aktuelle Meta.</p>
-                </div>
+                <div class="card"><h3>SCRIMS</h3><p style="text-transform: none;">Interne 5v5 Trainings und Clan-Wars.</p></div>
+                <div class="card"><h3>MATES</h3><p style="text-transform: none;">Finde Mitspieler von Eisen bis Radiant.</p></div>
             </div>
         </div>
 
-        <div id="patchnotes" class="tab-content">
-            <h2>Aktuelle Valorant Patch Notes</h2>
-            <div class="patch-card">
-                <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt09e075c325f6f43e/65a837077e6840d0483863a3/VAL_Patch_Notes_8_0_Web.jpg" class="patch-img" alt="Patch Notes">
-                <div class="patch-text">
-                    <h3>Update Highlights</h3>
-                    <p style="text-transform: none; color: var(--val-gray);">Die neuesten Änderungen an Agenten, Waffen und dem Map-Pool direkt von Riot Games.</p>
-                    <a href="https://playvalorant.com/de-de/news/" target="_blank" class="btn-val">ZUM VOLLSTÄNDIGEN ARTIKEL</a>
+        <div id="news" class="tab-content">
+            <h2>Live Feed & Updates</h2>
+            <div class="grid">
+                <div class="card" style="border-top: 3px solid var(--val-red);">
+                    <h3># Discord News</h3>
+                    <p style="text-transform: none;">Checke die neuesten Ankündigungen direkt in unserem News-Kanal.</p>
+                    <a href="1446030215783649280" class="btn-val">KANAL ÖFFNEN</a>
+                </div>
+                <div class="card">
+                    <h3>Patch Notes</h3>
+                    <p style="text-transform: none;">Offizielle Updates zu Agenten und Waffen von Riot Games.</p>
+                    <a href="https://playvalorant.com/de-de/news/" target="_blank" class="btn-val" style="background: var(--val-gray);">DETAILS LESEN</a>
                 </div>
             </div>
+            <div style="margin-top: 30px; height: 150px; background: url('https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt7819fef2089f251c/61fd96e73715c0246a48d88a/VALORANT_ANNOUNCEMENT_STILL.jpg') center/cover; border: 1px solid #333;"></div>
         </div>
 
-        <div id="agents-maps" class="tab-content">
-            <h2>Maps & Agents Übersicht</h2>
+        <div id="agents" class="tab-content">
+            <h2>Agents & Maps</h2>
             <div class="grid">
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt3aa79652366ee39f/5e8766fc29379a660990494a/Jett_C_Banner.png" style="width: 100%; margin-bottom: 15px;">
-                    <h3>Agents</h3>
-                    <p style="text-transform: none;">Infos zu allen Rollen: Duellant, Taktiker, Initiator und Wächter.</p>
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt3aa79652366ee39f/5e8766fc29379a660990494a/Jett_C_Banner.png" width="100%">
+                    <h3>Agent Infos</h3>
+                    <p style="text-transform: none;">Tipps zu Fähigkeiten und Rollen.</p>
                 </div>
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt02f39f88469d7211/646294d309062d1487627a6f/Map_Page_Sunset.jpg" style="width: 100%; margin-bottom: 15px;">
-                    <h3>Maps</h3>
-                    <p style="text-transform: none;">Callouts und Strategien für den aktuellen Map-Pool.</p>
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt02f39f88469d7211/646294d309062d1487627a6f/Map_Page_Sunset.jpg" width="100%">
+                    <h3>Map Tactics</h3>
+                    <p style="text-transform: none;">Callouts und Lineups lernen.</p>
                 </div>
             </div>
         </div>
 
     </div>
 
-    <footer>
-        &copy; 2025 NVEX | NICHT MIT RIOT GAMES VERBUNDEN
-    </footer>
+    <footer>&copy; 2025 NVEX | NICHT MIT RIOT GAMES VERBUNDEN</footer>
 
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
             tablinks = document.getElementsByTagName("button");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
-            
-            // Scrollt leicht nach unten zum Content, wenn man klickt
             window.scrollTo({ top: 400, behavior: 'smooth' });
         }
     </script>
-
 </body>
 </html>
