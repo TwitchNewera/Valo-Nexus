@@ -22,7 +22,6 @@
             line-height: 1.6;
         }
 
-        /* NAVIGATION */
         nav {
             background: var(--val-dark);
             display: flex;
@@ -50,9 +49,8 @@
             background: rgba(255, 70, 85, 0.1);
         }
 
-        /* HEADER */
         header {
-            height: 60vh;
+            height: 50vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -68,7 +66,6 @@
         h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; letter-spacing: 4px; font-weight: 900; }
         .hero-sub { color: var(--val-red); font-size: 1.2rem; letter-spacing: 2px; }
 
-        /* BUTTONS */
         .btn-val {
             background-color: var(--val-red);
             color: white;
@@ -85,25 +82,22 @@
 
         .btn-val:hover { background-color: var(--val-white); color: var(--val-red); transform: translateY(-3px); }
 
-        /* CONTENT */
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
         .tab-content { display: none; animation: fadeIn 0.5s; }
         .tab-content.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         h2 { border-left: 5px solid var(--val-red); padding-left: 15px; font-size: 1.8rem; margin: 40px 0 30px 0; }
 
-        /* GRID SYSTEM */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--val-dark); padding: 25px; border: 1px solid #1f2933; transition: 0.3s; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: var(--val-dark); padding: 20px; border: 1px solid #1f2933; transition: 0.3s; }
         .card:hover { border-color: var(--val-red); }
-        .card h3 { color: var(--val-red); margin-top: 15px; }
+        .card h3 { color: var(--val-red); margin: 15px 0 10px 0; }
 
-        /* LISTS IN CARDS */
-        .card ul { text-transform: none; font-size: 0.85rem; color: var(--val-gray); padding-left: 20px; margin-top: 10px; }
-        .card ul li { margin-bottom: 8px; }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-bottom: 2px solid var(--val-red); }
+        .card ul { text-transform: none; font-size: 0.85rem; color: var(--val-gray); padding-left: 20px; }
+        .card ul li { margin-bottom: 5px; }
 
-        /* EVENT CARD */
         .event-card {
             background: rgba(255, 70, 85, 0.05);
             border: 1px solid rgba(255, 70, 85, 0.3);
@@ -136,97 +130,103 @@
             <div class="event-card">
                 <div style="font-size: 2.5rem; color: var(--val-red); font-weight: 900;">5-STACK-FRIDAY</div>
                 <p>Jeden Freitag ab 20:00 Uhr</p>
-                <p style="text-transform: none; color: var(--val-gray);">Finde dein Team für den Rank-Push. Keine Randoms mehr!</p>
                 <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val" style="background: var(--val-white); color: var(--val-black);">JETZT ANMELDEN</a>
             </div>
 
             <div class="grid">
-                <div class="card" style="text-align: center;"><h3>SCRIMS</h3><p style="text-transform: none;">Interne 5v5 Trainings und Clan-Wars.</p></div>
-                <div class="card" style="text-align: center;"><h3>MATES</h3><p style="text-transform: none;">Finde Mitspieler von Eisen bis Radiant.</p></div>
+                <div class="card" style="text-align: center;"><h3>SCRIMS</h3><p style="text-transform: none;">Interne 5v5 Trainings.</p></div>
+                <div class="card" style="text-align: center;"><h3>MATES</h3><p style="text-transform: none;">Finde Mitspieler für jeden Rank.</p></div>
             </div>
         </div>
 
         <div id="news" class="tab-content">
             <h2>Live Feed & Updates</h2>
             <div class="grid">
-                <div class="card" style="border-top: 3px solid var(--val-red); text-align: center;">
+                <div class="card" style="text-align: center;">
                     <h3># Discord News</h3>
-                    <p style="text-transform: none;">Checke die neuesten Ankündigungen direkt in unserem News-Kanal.</p>
                     <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val">KANAL ÖFFNEN</a>
                 </div>
                 <div class="card" style="text-align: center;">
                     <h3>Patch Notes</h3>
-                    <p style="text-transform: none;">Offizielle Updates zu Agenten und Waffen von Riot Games.</p>
                     <a href="https://playvalorant.com/de-de/news/" target="_blank" class="btn-val" style="background: var(--val-gray);">DETAILS LESEN</a>
                 </div>
             </div>
         </div>
 
         <div id="agents" class="tab-content">
-            <h2>Agents & Rollen</h2>
-            <div class="grid" style="margin-bottom: 50px;">
-                <div class="card">
-                    <h3 style="color: #ff4655;">Duellanten</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Eure Entry-Fragger (Jett, Phoenix, Reyna). Schaffen Platz auf dem Spot.</p>
-                </div>
-                <div class="card">
-                    <h3 style="color: #ff4655;">Taktiker</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Die Smoker (Omen, Brim, Viper). Kontrollieren die Sichtlinien.</p>
-                </div>
-                <div class="card">
-                    <h3 style="color: #ff4655;">Initiatoren</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Aufklärer (Sova, Skye, Fade). Finden Gegner und blenden sie.</p>
-                </div>
-                <div class="card">
-                    <h3 style="color: #ff4655;">Wächter</h3>
-                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Die Verteidiger (Sage, Killjoy, Cypher). Halten Flanken und Spots.</p>
-                </div>
-            </div>
-
             <h2>Map-Pool & Strategien</h2>
             <div class="grid">
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt19313437549615fc/5eec366d03d09b305417830b/bind-featured.png" width="100%">
-                    <h3>Bind</h3>
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt193e4303b7405234/665ef07850e056499696f8c2/Abyss_KeyArt_Final.jpg">
+                    <h3>Abyss</h3>
                     <ul>
-                        <li>Nutze Teleporter für schnelle Rotationen.</li>
-                        <li>B-Long Kontrolle ist entscheidend für den Attack.</li>
-                        <li>Brimstone ist hier Pflicht wegen der Tripel-Smokes.</li>
+                        <li>Vorsicht an den Kanten - Todessturz möglich!</li>
+                        <li>Nutze Movement-Abilities für Abkürzungen.</li>
+                        <li>A-Side Retakes sind ohne Smokes extrem schwer.</li>
                     </ul>
                 </div>
 
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt8705973e660ef087/5ee7933190ca3a304e2808c1/ascent-featured.png" width="100%">
-                    <h3>Ascent</h3>
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt7f38076615967073/64e6669f14376c3453896564/Sunset_Loading_Screen.jpg">
+                    <h3>Sunset</h3>
                     <ul>
-                        <li>Die Mitte zu halten ist der Schlüssel zum Sieg.</li>
-                        <li>Nutze die Türen auf A und B zum Retake-Schutz.</li>
-                        <li>Killjoy/Cypher sind extrem stark auf B-Side.</li>
+                        <li>Mid-Kontrolle gewinnt die Runde.</li>
+                        <li>A-Main muss früh von Defendern gehalten werden.</li>
+                        <li>Nutze Breach oder Raze für die engen Gänge.</li>
                     </ul>
                 </div>
 
                 <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt06848ef9bc01a070/5f44865184206c359986326c/haven-featured.png" width="100%">
-                    <h3>Haven</h3>
-                    <ul>
-                        <li>Drei Spots! Teilt eure Ressourcen klug auf.</li>
-                        <li>A-Garten Kontrolle gibt euch wichtige Infos.</li>
-                        <li>Default-Play ist hier oft besser als ein Fast-Rush.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6d57c703d15b1357/63e18f260195e26715f333f2/Lotus_Loading_Screen_1.jpg" width="100%">
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6d57c703d15b1357/63e18f260195e26715f333f2/Lotus_Loading_Screen_1.jpg">
                     <h3>Lotus</h3>
                     <ul>
-                        <li>Nutze Drehtüren für Überraschungsmomente.</li>
-                        <li>A-Main Kontrolle ist für Verteidiger essentiell.</li>
-                        <li>Fakes funktionieren auf dieser Map besonders gut.</li>
+                        <li>Nutze Drehtüren für schnelles Flankieren.</li>
+                        <li>A-Rubbel Kontrolle ist für Attack essentiell.</li>
+                        <li>C-Side ist ideal für Post-Plant Lineups.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt19313437549615fc/5eec366d03d09b305417830b/bind-featured.png">
+                    <h3>Bind</h3>
+                    <ul>
+                        <li>Nutze Teleporter für Fake-Plays.</li>
+                        <li>Hookah Kontrolle verhindert B-Rushes.</li>
+                        <li>Viper/Brimstone sind hier Top-Picks.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt8705973e660ef087/5ee7933190ca3a304e2808c1/ascent-featured.png">
+                    <h3>Ascent</h3>
+                    <ul>
+                        <li>Zerstöre die Türen frühzeitig.</li>
+                        <li>Sova-Recon ist auf dieser Map OP.</li>
+                        <li>Mitte-Split ist die stärkste Taktik.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt06848ef9bc01a070/5f44865184206c359986326c/haven-featured.png">
+                    <h3>Haven</h3>
+                    <ul>
+                        <li>Drei Spots - Schützt C-Garage gut!</li>
+                        <li>Default-Play zieht Defender auseinander.</li>
+                        <li>Nutze Omen für vertikale Plays auf A-Boxen.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6f7b4bc664364491/5fbeba6669865620958f0016/Icebox_Loading_Screen.jpg">
+                    <h3>Icebox</h3>
+                    <ul>
+                        <li>Viel vertikales Gameplay - achte auf Oben.</li>
+                        <li>Sage-Wall auf B-Tube ist Standard-Def.</li>
+                        <li>A-Side Belagerung braucht gute Flashes.</li>
                     </ul>
                 </div>
             </div>
         </div>
-
     </div>
 
     <footer>&copy; 2025 NVEX | NICHT MIT RIOT GAMES VERBUNDEN</footer>
@@ -240,7 +240,7 @@
             for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
-            window.scrollTo({ top: 400, behavior: 'smooth' });
+            window.scrollTo({ top: 300, behavior: 'smooth' });
         }
     </script>
 </body>
