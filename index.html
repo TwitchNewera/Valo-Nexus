@@ -42,4 +42,206 @@
             font-weight: bold;
             letter-spacing: 1px;
             text-transform: uppercase;
-            transition:
+            transition: 0.3s;
+        }
+
+        nav button:hover, nav button.active {
+            color: var(--val-red);
+            background: rgba(255, 70, 85, 0.1);
+        }
+
+        /* HEADER */
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(15, 25, 35, 0.8), rgba(8, 12, 16, 1)), 
+                        url('https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6230f6120ef77793/64100c6d98656610738d8a7c/VAL_JETT_EYECATCHER.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 4px solid var(--val-red);
+        }
+
+        h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; letter-spacing: 4px; font-weight: 900; }
+        .hero-sub { color: var(--val-red); font-size: 1.2rem; letter-spacing: 2px; }
+
+        /* BUTTONS */
+        .btn-val {
+            background-color: var(--val-red);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn-val:hover { background-color: var(--val-white); color: var(--val-red); transform: translateY(-3px); }
+
+        /* CONTENT */
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .tab-content { display: none; animation: fadeIn 0.5s; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        h2 { border-left: 5px solid var(--val-red); padding-left: 15px; font-size: 1.8rem; margin: 40px 0 30px 0; }
+
+        /* GRID SYSTEM */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--val-dark); padding: 25px; border: 1px solid #1f2933; transition: 0.3s; }
+        .card:hover { border-color: var(--val-red); }
+        .card h3 { color: var(--val-red); margin-top: 15px; }
+
+        /* LISTS IN CARDS */
+        .card ul { text-transform: none; font-size: 0.85rem; color: var(--val-gray); padding-left: 20px; margin-top: 10px; }
+        .card ul li { margin-bottom: 8px; }
+
+        /* EVENT CARD */
+        .event-card {
+            background: rgba(255, 70, 85, 0.05);
+            border: 1px solid rgba(255, 70, 85, 0.3);
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        footer { text-align: center; padding: 40px; font-size: 0.8rem; color: var(--val-gray); border-top: 1px solid #1f2933; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <button class="active" onclick="openTab(event, 'home')">Home</button>
+        <button onclick="openTab(event, 'news')">Live News</button>
+        <button onclick="openTab(event, 'agents')">Agents & Maps</button>
+    </nav>
+
+    <header>
+        <p class="hero-sub">Valo Nexus Community</p>
+        <h1>NVEX</h1>
+        <a href="https://discord.gg/sDyb6mKrwY" class="btn-val">DEM DISCORD BEITRETEN</a>
+    </header>
+
+    <div class="container">
+        
+        <div id="home" class="tab-content active">
+            <h2>Community Events</h2>
+            <div class="event-card">
+                <div style="font-size: 2.5rem; color: var(--val-red); font-weight: 900;">5-STACK-FRIDAY</div>
+                <p>Jeden Freitag ab 20:00 Uhr</p>
+                <p style="text-transform: none; color: var(--val-gray);">Finde dein Team für den Rank-Push. Keine Randoms mehr!</p>
+                <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val" style="background: var(--val-white); color: var(--val-black);">JETZT ANMELDEN</a>
+            </div>
+
+            <div class="grid">
+                <div class="card" style="text-align: center;"><h3>SCRIMS</h3><p style="text-transform: none;">Interne 5v5 Trainings und Clan-Wars.</p></div>
+                <div class="card" style="text-align: center;"><h3>MATES</h3><p style="text-transform: none;">Finde Mitspieler von Eisen bis Radiant.</p></div>
+            </div>
+        </div>
+
+        <div id="news" class="tab-content">
+            <h2>Live Feed & Updates</h2>
+            <div class="grid">
+                <div class="card" style="border-top: 3px solid var(--val-red); text-align: center;">
+                    <h3># Discord News</h3>
+                    <p style="text-transform: none;">Checke die neuesten Ankündigungen direkt in unserem News-Kanal.</p>
+                    <a href="https://discord.com/channels/1445787244605472905/1450832994058244231" class="btn-val">KANAL ÖFFNEN</a>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h3>Patch Notes</h3>
+                    <p style="text-transform: none;">Offizielle Updates zu Agenten und Waffen von Riot Games.</p>
+                    <a href="https://playvalorant.com/de-de/news/" target="_blank" class="btn-val" style="background: var(--val-gray);">DETAILS LESEN</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="agents" class="tab-content">
+            <h2>Agents & Rollen</h2>
+            <div class="grid" style="margin-bottom: 50px;">
+                <div class="card">
+                    <h3 style="color: #ff4655;">Duellanten</h3>
+                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Eure Entry-Fragger (Jett, Phoenix, Reyna). Schaffen Platz auf dem Spot.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #ff4655;">Taktiker</h3>
+                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Die Smoker (Omen, Brim, Viper). Kontrollieren die Sichtlinien.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #ff4655;">Initiatoren</h3>
+                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Aufklärer (Sova, Skye, Fade). Finden Gegner und blenden sie.</p>
+                </div>
+                <div class="card">
+                    <h3 style="color: #ff4655;">Wächter</h3>
+                    <p style="text-transform: none; font-size: 0.85rem; color: var(--val-gray);">Die Verteidiger (Sage, Killjoy, Cypher). Halten Flanken und Spots.</p>
+                </div>
+            </div>
+
+            <h2>Map-Pool & Strategien</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt19313437549615fc/5eec366d03d09b305417830b/bind-featured.png" width="100%">
+                    <h3>Bind</h3>
+                    <ul>
+                        <li>Nutze Teleporter für schnelle Rotationen.</li>
+                        <li>B-Long Kontrolle ist entscheidend für den Attack.</li>
+                        <li>Brimstone ist hier Pflicht wegen der Tripel-Smokes.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt8705973e660ef087/5ee7933190ca3a304e2808c1/ascent-featured.png" width="100%">
+                    <h3>Ascent</h3>
+                    <ul>
+                        <li>Die Mitte zu halten ist der Schlüssel zum Sieg.</li>
+                        <li>Nutze die Türen auf A und B zum Retake-Schutz.</li>
+                        <li>Killjoy/Cypher sind extrem stark auf B-Side.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt06848ef9bc01a070/5f44865184206c359986326c/haven-featured.png" width="100%">
+                    <h3>Haven</h3>
+                    <ul>
+                        <li>Drei Spots! Teilt eure Ressourcen klug auf.</li>
+                        <li>A-Garten Kontrolle gibt euch wichtige Infos.</li>
+                        <li>Default-Play ist hier oft besser als ein Fast-Rush.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.contentstack.io/v3/assets/blt73edcd59c8fa3331/blt6d57c703d15b1357/63e18f260195e26715f333f2/Lotus_Loading_Screen_1.jpg" width="100%">
+                    <h3>Lotus</h3>
+                    <ul>
+                        <li>Nutze Drehtüren für Überraschungsmomente.</li>
+                        <li>A-Main Kontrolle ist für Verteidiger essentiell.</li>
+                        <li>Fakes funktionieren auf dieser Map besonders gut.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>&copy; 2025 NVEX | NICHT MIT RIOT GAMES VERBUNDEN</footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+            tablinks = document.getElementsByTagName("button");
+            for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+            window.scrollTo({ top: 400, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
